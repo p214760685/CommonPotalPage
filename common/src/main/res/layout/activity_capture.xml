@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/capture_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <FrameLayout
+                android:id="@+id/capture_preview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+            <LinearLayout
+                android:id="@+id/capture_mask_top"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp48"
+                    android:background="#95111111"
+                    >
+
+                    <ImageButton
+                        android:id="@+id/back_cap"
+                        android:layout_width="@dimen/dp48"
+                        android:layout_height="@dimen/dp48"
+                        android:src="@drawable/icon_return_white"
+                        android:padding="@dimen/dp12"
+                        android:background="@null"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/dp18"
+                        android:text="扫一扫"
+                        android:gravity="center"/>
+
+
+                    <ImageButton
+                        android:id="@+id/scan_top"
+                        android:layout_width="@dimen/dp48"
+                        android:layout_height="@dimen/dp48"
+                        android:src="@drawable/icon_photos"
+                        android:layout_alignParentRight="true"
+                        android:padding="@dimen/dp8"
+                        android:background="@null"
+                        />
+
+                </RelativeLayout>
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp72"
+                    android:background="@drawable/scan_shadow"/>
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/capture_crop_view"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/capture_mask_top"
+                android:background="@drawable/img_scanqr_frame" >
+
+                <ImageView
+                    android:id="@+id/capture_scan_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/img_scanqr_line" />
+
+
+                <ProgressBar
+                    android:id="@+id/capture_scan_loading"
+                    android:layout_width="@dimen/dp30"
+                    android:layout_height="@dimen/dp30"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"
+                    android:indeterminateDrawable="@drawable/dialog_loading" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/capture_mask_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@id/capture_crop_view"
+                android:background="@drawable/scan_shadow"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/dp14"
+                    android:layout_below="@id/capture_crop_view"
+                    android:text="将二维码放入框内,即可自动扫描"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/capture_mask_left"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_above="@id/capture_mask_bottom"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/capture_mask_top"
+                android:layout_toLeftOf="@id/capture_crop_view"
+                android:background="@drawable/scan_shadow" />
+
+            <ImageView
+                android:id="@+id/capture_mask_right"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_above="@id/capture_mask_bottom"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/capture_mask_top"
+                android:layout_toRightOf="@id/capture_crop_view"
+                android:background="@drawable/scan_shadow" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/capture_restart_scan"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:background="#66ffcc00"
+            android:gravity="center"
+            android:text="restart scan"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+</LinearLayout>
